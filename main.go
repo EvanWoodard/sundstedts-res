@@ -12,8 +12,9 @@ const service string = "shared"
 
 func main() {
 	r := mux.NewRouter()
-	r.PathPrefix("/js-req/").Handler(http.StripPrefix("/js-req/", http.FileServer(http.Dir("js-req"))))
-	r.PathPrefix("/no-js/").Handler(http.StripPrefix("/no-js/", http.FileServer(http.Dir("no-js"))))
+	r.PathPrefix("/js/").Handler(http.StripPrefix("/js/", http.FileServer(http.Dir("dist/js"))))
+	r.PathPrefix("/css/").Handler(http.StripPrefix("/css/", http.FileServer(http.Dir("dist/css"))))
+	r.PathPrefix("/wc/").Handler(http.StripPrefix("/wc/", http.FileServer(http.Dir("dist/wc"))))
 
 	srv := &http.Server{
 		Addr:         "0.0.0.0:8080",

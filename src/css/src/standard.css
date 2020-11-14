@@ -1,0 +1,9 @@
+@media only screen and (min-device-width: 768px) {
+    html, body {
+        font-size: 10px;
+    }
+
+    .menu-list .menu-item {
+        height: 6rem;
+    }
+}

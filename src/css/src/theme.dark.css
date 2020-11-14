@@ -1,0 +1,25 @@
+:root {
+    --bg-color: #212127;
+    --bg-color--hover: #414147;
+    --bg-color--light: #282837;
+
+    /* Theme Colors */
+    --color--primary: #006aa7;
+    --color--primary-light: #5298d9;
+    --color--primary-dark: #004078;
+
+    --color--accent: #5298d9;
+
+    --color--text: #fff;
+    --color--text-on-primary: #fff;
+
+    --color--secondary: #fd8638;
+    --color--secondary-light: #ffac50;
+    --color--secondary-dark: #ed6d32;
+
+    --color--text-on-secondary: #000;
+
+    --color--error: #ee2428;
+
+    --color--box-shadow: rgba(30, 30, 30, 0.72);
+}

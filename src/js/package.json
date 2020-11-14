@@ -1,0 +1,11 @@
+{
+  "name": "js",
+  "version": "0.1.0",
+  "description": "JS utils for sundstedt.us",
+  "main": "index.js",
+  "author": "Evan Woodard",
+  "license": "MIT",
+  "scripts": {
+    "build": "cp -a src/. dist"
+  }
+}

@@ -54,7 +54,7 @@ class Slider extends LitElement {
     constructor() {
         super()
         this.moveEvents = []
-        console.log('Sun-Slider v0.1.0')
+        console.log('Sun-Slider v0.1.1')
     }
 
     firstUpdated() {
@@ -176,7 +176,7 @@ class Slider extends LitElement {
 
     render() {
         return html`
-            <link href="shared/css/theme.dark.css" rel="stylesheet" />
+            <link href="https://res.sundstedt.us/css/theme.dark.css" rel="stylesheet" />
 
             <div class="sl-container">
                 <div id="track" class="sl-track">

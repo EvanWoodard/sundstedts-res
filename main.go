@@ -14,6 +14,7 @@ func main() {
 	r := mux.NewRouter()
 	r.PathPrefix("/js/").Handler(http.StripPrefix("/js/", http.FileServer(http.Dir("dist/js"))))
 	r.PathPrefix("/css/").Handler(http.StripPrefix("/css/", http.FileServer(http.Dir("dist/css"))))
+	r.PathPrefix("/img/").Handler(http.StripPrefix("/img/", http.FileServer(http.Dir("dist/img"))))
 	r.PathPrefix("/wc/").Handler(http.StripPrefix("/wc/", http.FileServer(http.Dir("dist/wc"))))
 
 	srv := &http.Server{

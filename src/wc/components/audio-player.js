@@ -47,7 +47,7 @@ class AudioPlayer extends LitElement {
 
     constructor() {
         super()
-        console.log('Sun-Audio v0.1.0')
+        console.log('Sun-Audio v0.1.1')
         this.tracksURL = 'https://evenson.sundstedt.us/music/tracks'
         this.trackURL = 'https://evenson.sundstedt.us/music/track/'
         this.currentTrackPos = 0
@@ -84,9 +84,9 @@ class AudioPlayer extends LitElement {
     render() {
         return html`
             <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
-            <link href="shared/css/theme.dark.css" rel="stylesheet" />
-            <link href="shared/css/mobile.css" rel="stylesheet" />
-            <link href="shared/css/standard.css" rel="stylesheet" />
+            <link href="https://res.sundstedt.us/css/theme.dark.css" rel="stylesheet" />
+            <link href="https://res.sundstedt.us/css/mobile.css" rel="stylesheet" />
+            <link href="https://res.sundstedt.us/css/standard.css" rel="stylesheet" />
 
             <div class="row full-height">
                 <div class="col col-5">

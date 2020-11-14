@@ -6,7 +6,7 @@ import (
 	"os/exec"
 )
 
-var libs = []string{"wc", "js", "css"}
+var libs = []string{"wc", "js", "css", "img"}
 
 func main() {
 	log.Println("Creating dist folder")

@@ -1,0 +1,10 @@
+{
+  "name": "img",
+  "version": "0.1.0",
+  "main": "index.js",
+  "author": "Evan Woodard",
+  "license": "MIT",
+  "scripts": {
+    "build": "cp -a src/. dist"
+  }
+}

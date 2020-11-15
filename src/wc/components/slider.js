@@ -176,7 +176,7 @@ class Slider extends LitElement {
 
     render() {
         return html`
-            <link href="https://res.sundstedt.us/css/theme.dark.css" rel="stylesheet" />
+            <link href="https://cdn.sundstedt.us/css/theme.dark.css" rel="stylesheet" />
 
             <div class="sl-container">
                 <div id="track" class="sl-track">

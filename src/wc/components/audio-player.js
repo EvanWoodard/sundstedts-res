@@ -84,9 +84,9 @@ class AudioPlayer extends LitElement {
     render() {
         return html`
             <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
-            <link href="https://res.sundstedt.us/css/theme.dark.css" rel="stylesheet" />
-            <link href="https://res.sundstedt.us/css/mobile.css" rel="stylesheet" />
-            <link href="https://res.sundstedt.us/css/standard.css" rel="stylesheet" />
+            <link href="https://cdn.sundstedt.us/css/theme.dark.css" rel="stylesheet" />
+            <link href="https://cdn.sundstedt.us/css/mobile.css" rel="stylesheet" />
+            <link href="https://cdn.sundstedt.us/css/standard.css" rel="stylesheet" />
 
             <div class="row full-height">
                 <div class="col col-5">

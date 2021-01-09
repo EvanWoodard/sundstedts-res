@@ -6,6 +6,7 @@ import (
 	"os"
 	"time"
 
+	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
 )
 
@@ -19,6 +20,8 @@ func main() {
 	r.PathPrefix("/img/").Handler(http.StripPrefix("/img/", http.FileServer(http.Dir("dist/img"))))
 	r.PathPrefix("/wc/").Handler(http.StripPrefix("/wc/", http.FileServer(http.Dir("dist/wc"))))
 
+	c := handlers.AllowedOrigins([]string{"https://evenson.sundstedt.us"})
+
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = "8080"
@@ -29,7 +32,7 @@ func main() {
 		WriteTimeout: time.Second * 15,
 		ReadTimeout:  time.Second * 15,
 		IdleTimeout:  time.Second * 60,
-		Handler:      r,
+		Handler:      handlers.CORS(c)(r),
 	}
 
 	log.Fatal(srv.ListenAndServe())

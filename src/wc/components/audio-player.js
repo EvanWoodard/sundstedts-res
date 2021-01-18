@@ -47,7 +47,7 @@ class AudioPlayer extends LitElement {
 
     constructor() {
         super()
-        console.log('Sun-Audio v0.1.1')
+        console.log('Sun-Audio v0.1.2')
         this.tracksURL = 'https://evenson.sundstedt.us/music/tracks'
         this.trackURL = 'https://evenson.sundstedt.us/music/track/'
         this.currentTrackPos = 0
@@ -170,7 +170,7 @@ class AudioPlayer extends LitElement {
     getNextTrack(override) {
         let i = this.currentTrackPos
         if (i + 1 > this.tracks.length-1) {
-            if (this.looping || override) {
+            if (this.looping || override === true) {
                 i = -1
             } else {
                 return

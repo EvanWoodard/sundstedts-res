@@ -54,7 +54,7 @@ class Slider extends LitElement {
     constructor() {
         super()
         this.moveEvents = []
-        console.log('Sun-Slider v0.1.1')
+        console.log('Sun-Slider v0.1.2')
     }
 
     firstUpdated() {
@@ -85,12 +85,12 @@ class Slider extends LitElement {
         }
 
         let val = ((e.x - this._zero) / (this._full - this._zero)) * this.max
-        console.log('Slider::moveval:', val)
+        // console.log('Slider::moveval:', val)
         if (val < 5) { 
             val = 0
         }
         this.setProgress(val)
-        console.log('Slider::movevalfinal:', val)
+        // console.log('Slider::movevalfinal:', val)
     }
 
     thumbStop(e) {

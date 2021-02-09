@@ -19,6 +19,7 @@ func main() {
 	r.PathPrefix("/css/").Handler(http.StripPrefix("/css/", http.FileServer(http.Dir("dist/css"))))
 	r.PathPrefix("/img/").Handler(http.StripPrefix("/img/", http.FileServer(http.Dir("dist/img"))))
 	r.PathPrefix("/wc/").Handler(http.StripPrefix("/wc/", http.FileServer(http.Dir("dist/wc"))))
+	r.PathPrefix("/wcp/").Handler(http.StripPrefix("/wcp/", http.FileServer(http.Dir("dist/wcp"))))
 
 	c := handlers.AllowedOrigins([]string{"https://evenson.sundstedt.us"})
 

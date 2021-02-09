@@ -1,7 +1,8 @@
-import { LitElement, html, css } from 'lit-element'
+import { html, css } from 'lit-element'
 import './slider'
+import { SunBase } from './sun_base';
 
-class AudioPlayer extends LitElement {
+class AudioPlayer extends SunBase {
     static get properties() {
         return {
             vol: { type: Number },
@@ -46,8 +47,7 @@ class AudioPlayer extends LitElement {
     }
 
     constructor() {
-        super()
-        console.log('Sun-Audio v0.1.2')
+        super('Sun-Audio', 'v0.1.6')
         this.tracksURL = 'https://evenson.sundstedt.us/music/tracks'
         this.trackURL = 'https://evenson.sundstedt.us/music/track/'
         this.currentTrackPos = 0
@@ -56,7 +56,7 @@ class AudioPlayer extends LitElement {
         this.tracks = []
 
         this.addEventListener('tracks-loaded', e => { 
-            console.log(e)
+            this.debug(e)
             this.tracks = e.detail
             this.playTrack(this.tracks[0].id, 0)
         })
@@ -66,14 +66,14 @@ class AudioPlayer extends LitElement {
         return css`
             .btn--track{
                 color: var(--color--text-on-primary);
-                background-color: var(--bg-color);
+                background-color: var(--color--inactive-element);
                 width: 100%;
                 height: 5.6rem;
                 border-radius: unset;
                 text-transform: unset;
                 padding: 1.2rem;
             }
-            .btn--track.active{ background-color: var(--bg-color--light); border-left: .4rem inset var(--color--primary-light); }
+            .btn--track.active{ background-color: var(--color--active-element); border-left: .4rem inset var(--color--primary-light); }
             .btn--track .artist{ font-size: 1.2rem; }
             .track-list{ background-color: var(--bg-color--light); color: var(--color--text-on-primary); height: 100%; box-shadow: -1rem 0px 2rem .4rem var(--color--box-shadow); }
             .track-list--header{ display: flex; align-items: center; box-shadow: 0 4px 2px -2px var(--color--box-shadow); height: 5rem; padding: 0 1.4rem; }
@@ -84,7 +84,6 @@ class AudioPlayer extends LitElement {
     render() {
         return html`
             <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
-            <link href="https://cdn.sundstedt.us/css/theme.dark.css" rel="stylesheet" />
             <link href="https://cdn.sundstedt.us/css/mobile.css" rel="stylesheet" />
             <link href="https://cdn.sundstedt.us/css/standard.css" rel="stylesheet" />
 
@@ -107,7 +106,6 @@ class AudioPlayer extends LitElement {
                             html`<i class="material-icons icn--btn" @click="${this.toggleLoop}">repeat</i>`
                         }
                         <div class="spc"></div>
-                        <!-- <input id="vol" type="range" min="0" max="80" step="1" value="80"></input> -->
                         <sun-slider @vol-changed="${this.changeVol}" style="width: 15rem; padding-right: 1.4rem;"></sun-slider>
                         <i class="material-icons icn--btn" @click="${this.toggleMute}">
                             ${ this._muted ? "volume_off" : "volume_up" }
@@ -126,7 +124,7 @@ class AudioPlayer extends LitElement {
                     }) }
                 </div>
             </div>
-        `;
+        `
     }
 
     firstUpdated() {
@@ -156,7 +154,6 @@ class AudioPlayer extends LitElement {
     playTrack(id, i) {
         this.currentTrackPos = i
         this.currentTrackId = id
-        // this.update()
         this._audio.load()
         this._audio.play()
     }

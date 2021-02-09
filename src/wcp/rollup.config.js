@@ -17,10 +17,7 @@ const copyConfig = {
   // JavaScript modules and other ES2015+ features.
   const config = {
     input: [
-      'components/audio-player.js',
-      'components/slider.js',
-      'components/toggle.js',
-      'components/theme-picker.js'
+      'pages/landing.mjs',
     ],
     output: {
       dir: 'dist',
@@ -31,7 +28,7 @@ const copyConfig = {
       copy(copyConfig),
       resolve(),
     ],
-    preserveEntrySignatures: false,
+    preserveEntrySignatures: 'allow-extension',
   };
   
   if (process.env.NODE_ENV !== 'development') {

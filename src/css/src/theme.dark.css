@@ -1,12 +1,18 @@
 :root {
+    --theme: dark;
     --bg-color: #212127;
     --bg-color--hover: #414147;
     --bg-color--light: #282837;
+
+    --bxs-color: #212127;
 
     /* Theme Colors */
     --color--primary: #006aa7;
     --color--primary-light: #5298d9;
     --color--primary-dark: #004078;
+
+    --color--active-element: #282837;
+    --color--inactive-element: #212127;
 
     --color--accent: #5298d9;
 

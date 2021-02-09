@@ -1,0 +1,21 @@
+{
+    "--theme": "light",
+    "--bg-color": "#eee",
+    "--bg-color--hover": "#ccc",
+    "--bg-color--light": "#006aa7",
+    "--bxs-color": "#004078",
+    "--color--primary": "#006aa7",
+    "--color--primary-light": "#5298d9",
+    "--color--primary-dark": "#004078",
+    "--color--active-element": "#006aa7",
+    "--color--inactive-element": "#004078",
+    "--color--accent": "#5298d9",
+    "--color--text": "#333",
+    "--color--text-on-primary": "#fff",
+    "--color--secondary": "#ffeb3b",
+    "--color--secondary-light": "#ffff72",
+    "--color--secondary-dark": "#c8b900",
+    "--color--text-on-secondary": "#000",
+    "--color--error": "#ee2428",
+    "--color--box-shadow": "rgba(30, 30, 30, 0.52)"
+}

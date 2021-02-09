@@ -1,0 +1,20 @@
+{
+    "name": "wcp",
+    "version": "0.1.0",
+    "description": "web component based pages for sundstedts.us",
+    "main": "index.js",
+    "author": "Evan Woodard",
+    "license": "MIT",
+    "scripts": {
+      "build": "rollup -c"
+    },
+    "devDependencies": {
+      "@rollup/plugin-node-resolve": "^10.0.0",
+      "lit-element": "^2.4.0",
+      "rollup": "^2.33.1",
+      "rollup-plugin-copy": "^3.3.0",
+      "rollup-plugin-minify-html-literals": "^1.2.5",
+      "rollup-plugin-terser": "^7.0.2"
+    }
+  }
+  

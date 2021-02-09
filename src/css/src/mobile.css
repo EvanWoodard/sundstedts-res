@@ -1,7 +1,7 @@
 :root {
     --topbar--height: 6.4rem;
 
-    --slide-transition: all .5s ease-in-out;
+    --slide-transition: transform .5s ease-in-out;
 }
 
 html {
@@ -128,6 +128,7 @@ body {
 /* Topbar */
 .topbar {
     position: fixed;
+    z-index: 50;
     display: flex;
     width: 100%;
     height: var(--topbar--height);
@@ -170,21 +171,22 @@ body {
 /* Menu */
 .menu-list {
     position: fixed;
+    display: flex;
+    flex-direction: column;
     z-index: 35;
     background-color: var(--bg-color);
-    box-shadow: 0 1rem 2rem .4rem var(--color--box-shadow);
+    box-shadow: 0 .3rem .5rem .1rem var(--color--box-shadow);
 
     left: 0;
     top: var(--topbar--height);
 
-    height: 100%;
+    height: calc(100% - var(--topbar--height));
     width: 28rem;
 
     transition: var(--slide-transition);
 }
 
 .menu-list.hidden {
-    display: block;
     box-shadow: unset;
 
     transform: translateX(-28rem);
@@ -213,6 +215,15 @@ body {
 
 .menu-list .menu-item .icn {
     vertical-align: middle;
+}
+
+.menu-list .menu-footer {
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
 }
 
 /* Page Content */

@@ -1,6 +1,7 @@
-import { LitElement, html, css } from 'lit-element'
+import { html, css } from 'lit-element'
+import { SunBase } from './sun_base'
 
-class Slider extends LitElement {
+class Slider extends SunBase {
     static get properties() {
         return {
             moveEvents: { type: Array }
@@ -12,7 +13,7 @@ class Slider extends LitElement {
     }
 
     get cachedVol() {
-        return localStorage.getItem('sun-slider::vol') || 50
+        return this.retrieve('vol') || 50
     }
 
     set cachedVol(vol) {
@@ -22,7 +23,7 @@ class Slider extends LitElement {
             }
         })
         this.dispatchEvent(e)
-        return localStorage.setItem('sun-slider::vol', vol)
+        return this.store('vol', vol)
     }
 
     get _thumb() {
@@ -52,9 +53,8 @@ class Slider extends LitElement {
     }
 
     constructor() {
-        super()
+        super('Sun-Slider', 'v0.1.7')
         this.moveEvents = []
-        console.log('Sun-Slider v0.1.2')
     }
 
     firstUpdated() {
@@ -85,12 +85,10 @@ class Slider extends LitElement {
         }
 
         let val = ((e.x - this._zero) / (this._full - this._zero)) * this.max
-        // console.log('Slider::moveval:', val)
         if (val < 5) { 
             val = 0
         }
         this.setProgress(val)
-        // console.log('Slider::movevalfinal:', val)
     }
 
     thumbStop(e) {
@@ -154,7 +152,7 @@ class Slider extends LitElement {
                 width: var(--track-available);
                 border-radius: .5rem;
                 height: 1rem;
-                background: var(--color--primary);
+                background: var(--color--inactive-element);
             }
 
             .sl-thumb {
@@ -167,7 +165,7 @@ class Slider extends LitElement {
                 width: 2rem;
                 z-index: 2;
                 border-radius: 50%;
-                box-shadow: .2rem 0 .2rem .2rem var(--bg-color);
+                box-shadow: .2rem 0 .2rem .2rem var(--bxs-color);
                 background: var(--color--primary-light);
                 cursor: pointer;
             }
@@ -176,8 +174,6 @@ class Slider extends LitElement {
 
     render() {
         return html`
-            <link href="https://cdn.sundstedt.us/css/theme.dark.css" rel="stylesheet" />
-
             <div class="sl-container">
                 <div id="track" class="sl-track">
                     <span id="thumb" class="sl-thumb"></span>
